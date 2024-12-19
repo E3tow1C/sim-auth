@@ -4,6 +4,10 @@
 
 <h1>Articles</h1>
 
+<% if @articles.empty? %>
+  <p style="color: grey;">------- There are no articles yet. -------</p>
+<% end %>
+
 <div id="articles">
   <% @articles.each do |article| %>
     <%= render article %>
