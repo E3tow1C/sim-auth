@@ -27,8 +27,8 @@
 
   <body>
     <nav style="display: flex; justify-content: space-between; padding: 1rem;">
-      <%= link_to "Home", root_path %>
-      <%= button_to "Sign out", session_path, method: :delete %>
+      <%= link_to "Home", root_path if authenticated? %>
+      <%= button_to "Sign out", session_path, method: :delete if authenticated? %>
     </nav>
     <%= yield %>
   </body>
