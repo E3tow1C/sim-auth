@@ -1,27 +1,27 @@
 <%= form_with(model: article) do |form| %>
   <% if article.errors.any? %>
     <div style="color: red">
-      <h6><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h6>
+      <h6><%= pluralize(article.errors.count, "ข้อผิดพลาด") %> ไม่สามารถบันทึกบทความได้:</h6>
 
       <ul>
         <% article.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li><%= error.message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
   <div>
-    <%= form.label :header, style: "display: block" %>
+    <%= form.label :ชื่อเรื่อง, style: "display: block" %>
     <%= form.text_field :header, size: 72 %>
   </div>
 
   <div>
-    <%= form.label :body, style: "display: block" %>
+    <%= form.label :เนื้อหา, style: "display: block" %>
     <%= form.text_field :body, size: 72 %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit article.new_record? ? "สร้างบทความ" : "อัปเดทบทความ" %>
   </div>
 <% end %>
