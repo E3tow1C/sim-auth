@@ -27,8 +27,14 @@
 
   <body>
     <nav style="display: flex; justify-content: space-between; padding: 1rem;">
-      <%= link_to "Home", root_path if authenticated? %>
+      <div>#</div>
+      <% if request.path != "/" %>
+        <%= link_to "Home", root_path if authenticated? %>
+      <% end %>
       <%= button_to "Sign out", session_path, method: :delete if authenticated? %>
+      <% if request.path != "/session/new" %>
+        <%= button_to "Sign in", new_session_path unless authenticated? %>
+      <% end %>
     </nav>
     <%= yield %>
   </body>
