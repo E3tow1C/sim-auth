@@ -22,6 +22,11 @@
   </div>
 
   <div>
+    <%= form.label :ผู้เขียน, style: "display: block" %>
+    <%= form.text_field :author, size: 72 %>
+  </div>
+
+  <div>
     <%= form.submit article.new_record? ? "สร้างบทความ" : "อัปเดทบทความ" %>
   </div>
 <% end %>
