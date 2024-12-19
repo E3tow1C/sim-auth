@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :ผู้เขียน, style: "display: block" %>
-    <%= form.text_field :author, size: 72 %>
+    <%= form.text_field :author, value: Current.user.email_address, size: 72, disabled: true %>
   </div>
 
   <div>
