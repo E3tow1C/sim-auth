@@ -1,4 +1,4 @@
 class Article < ApplicationRecord
-  validates :header, presence: { message: "Header can't be blank" }
-  validates :body, presence: { message: "Body can't be blank" }, length: { maximum: 100, message: "Max length 100 characters" }
+  validates :header, presence: { message: "ชื่อเรื่องต้องไม่ว่างเปล่า" }
+  validates :body, presence: { message: "เนื้อหาต้องไม่ว่างเปล่า" }, length: { maximum: 100, message: "เนื้อหาต้องมีความยาวไม่เกิน 100 ตัวอักษร" }
 end
