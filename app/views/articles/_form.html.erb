@@ -24,6 +24,7 @@
   <div>
     <%= form.label :ผู้เขียน, style: "display: block" %>
     <%= form.text_field :author, value: Current.user.email_address, size: 72, disabled: true %>
+    <%= form.hidden_field :author, value: Current.user.email_address %>
   </div>
 
   <div>
