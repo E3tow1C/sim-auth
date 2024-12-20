@@ -4,6 +4,6 @@ class Article < ApplicationRecord
   validates :author, presence: { message: "ผู้เขียนต้องไม่ว่างเปล่า" }, length: { maximum: 100, message: "ชื่อผู้เขียนต้องมีความยาวไม่เกิน 100 ตัวอักษร" }
 
   def save_button_article
-    new_record? ? "สร้างบทความใหม่" : "แก้ไขบทความ"
+    new_record? ? "สร้างบทความใหม่" : "อัปเดทบทความ"
   end
 end
